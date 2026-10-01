@@ -1,0 +1,13 @@
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: Backend
+metadata:
+  name: akamai-backend
+  namespace: default
+spec:
+  endpoints:
+  - fqdn:
+      hostname: control.akamai.com
+      port: 443
+  tls:
+    wellKnownCACertificates: System
+    sni: control.akamai.com
